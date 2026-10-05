@@ -68,7 +68,13 @@ When the OS created a user, these were the only changes:
 
 The header (`BC AD AD BC 00 00 00 90 00 00 00 02 BC AD AD BC`) and the 16 bytes at `0xFFF0` (`4D 26 00 7A 4D 26 00 62 00 04 …`) did not change.
 
-The OS always writes `/dev_flash2/etc/xRegistry.sys` and `/dev_flash2/etc/backup/xRegistry.sys` with identical content.
+**Main and backup copies.** In the 5 cases where I downloaded both `/dev_flash2/etc/xRegistry.sys` and `/dev_flash2/etc/backup/xRegistry.sys` after the OS had written the registry, the two were byte-identical. Those writes covered the original state, a language change and three user creations. Some things I can't tell:
+
+- whether the OS updates both at the same moment, or syncs the backup later (e.g. at shutdown);
+- what it does if the two differ;
+- when it actually falls back to the backup. psdevwiki lists its purpose as unknown.
+
+I always uploaded the same patched file to both locations, so a mismatched pair was never tested.
 
 ## 4. Writing via FTP, and the allocation rule
 

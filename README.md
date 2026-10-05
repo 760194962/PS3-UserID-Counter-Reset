@@ -16,7 +16,7 @@ This repo documents how the counter actually works and how to reset it. It also 
      `new_u2 = old_u2 XOR crc16_raw((old_bytes ⊕ new_bytes) + (old_tail ⊕ new_tail))`
    - The model matched all 7 entries the OS rewrote in the dumps I compared. Two of those were the OS's own counter writes, and they were predicted **before** they happened.
 2. **No other checksum covers the whole file.** When a user is created, only the new entries get appended and the counter entry gets rewritten in place.
-3. **Writing via FTP works.** You can upload directly to `/dev_flash2/etc/xRegistry.sys` and `/dev_flash2/etc/backup/xRegistry.sys`. The OS always writes both copies with identical content. A patched file survives a reboot and the OS uses the patched value.
+3. **Writing via FTP works.** You can upload directly to `/dev_flash2/etc/xRegistry.sys` and `/dev_flash2/etc/backup/xRegistry.sys`. Every time I pulled both copies after the OS had written the registry, they were byte-identical, so I patch both the same way. A patched file survives a reboot and the OS uses the patched value.
 4. **Next user ID = max(counter, highest registered user ID) + 1.** Lowering the counter does nothing while a higher-numbered user still exists.
 5. **`/dev_flash2/etc/savedLastCreatedUserId`** (4 bytes, big-endian) carries the counter across *Restore PS3 System*. It is not updated when a user is created.
 6. **Attaching an HDD that already has `home/XXXXXXXX` folders re-imports those users on boot** and raises the counter to the highest imported ID.
