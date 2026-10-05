@@ -1,6 +1,6 @@
 # Findings in detail
 
-All observations come from one CECHA01 (NAND) on Evilnat 4.93 / Cobra 8.5. I pulled `/dev_flash2/etc` over FTP between each step and compared the dumps byte by byte. Offsets are from my file and **will differ on yours**. The tool finds entries by key name.
+All observations come from one CECHA00 (NAND) on Evilnat 4.93 / Cobra 8.5. I pulled `/dev_flash2/etc` over FTP between each step and compared the dumps byte by byte. Offsets are from my file and **will differ on yours**. The tool finds entries by key name.
 
 ## 1. Value entry layout
 
