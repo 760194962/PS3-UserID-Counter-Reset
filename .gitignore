@@ -1,0 +1,6 @@
+# Never commit real registry dumps: they contain PSN sign-in fields, Wi-Fi passphrase, HDD serial
+*.sys
+savedLastCreatedUserId
+*.bin
+dumps/
+__pycache__/
