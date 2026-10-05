@@ -4,7 +4,7 @@ Every local user on a PS3 gets a folder `/dev_hdd0/home/XXXXXXXX`. The number co
 
 This repo documents how the counter actually works and how to reset it. It also includes a small tool that patches the counter and fixes the checksum.
 
-**Tested on:** one CECHA01 (NAND), Evilnat 4.93 CFW with Cobra 8.5, webMAN MOD FTP. October 2026.
+**Tested on:** one CECHA00 (NAND), Evilnat 4.93 CFW with Cobra 8.5, webMAN MOD FTP. October 2026.
 
 > ⚠️ **You are editing the system registry on your console's internal flash.** The PS3 cannot boot without a valid registry. Back up `/dev_flash2/etc` first, keep the backup, and only continue if you can recover from a mistake. This was tested on a single console. Use at your own risk.
 
